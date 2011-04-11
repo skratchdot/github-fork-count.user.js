@@ -11,37 +11,13 @@ if( typeof unsafeWindow.jQuery !== 'undefined' ) {
 	// We can use the shorthand notation of jQuery
 	var $ = unsafeWindow.jQuery;
 
-	// Setup our repo/fork counts using unique selectors
-	// for each type of page.
-	var projectPageNodes = $('div#main div.site div.columns div.first ul.repositories > li.public'),
-		projectPageRepoCount = projectPageNodes.length,
-		projectPageForkCount = 0,
-		repositoryPageNodes = $('div#main div.site ul.repositories > li.public'),
+	// Setup our repo/fork counts
+	var repositoryPageNodes = $('div#main div.site ul.repositories > li.public'),
 		repositoryPageRepoCount = repositoryPageNodes.length,
 		repositoryPageForkCount = 0,
 		repositoryPageForkedCount = 0;
 
-	// Project Page
-	if( projectPageRepoCount > 0 ) {
-
-		// Setup Fork Count
-		projectPageNodes.each(function() {
-			if( $(this).hasClass('fork') === true ) {
-				projectPageForkCount++;
-			}
-		});
-
-		// Display Fork Count
-		$('div#main div.site div.columns div.last ul.stats li:first a:first').append(
-			'<span style="margin-top:-5px;">' +
-			projectPageForkCount + ' fork' +
-			(projectPageForkCount===1?'':'s') +
-			'</span>'
-		);
-
-	}
-
-	// Repository Page
+	// Profile/Repository Page
 	if( repositoryPageRepoCount > 0 ) {
 
 		// Setup Fork Count
@@ -67,6 +43,14 @@ if( typeof unsafeWindow.jQuery !== 'undefined' ) {
 			'.</h4>'
 		);
 
+		// Display Fork Count (profile page - right column)
+		$('div#main div.site div.columns div.last ul.stats li:first a:first').append(
+			'<span style="margin-top:-5px;">' +
+			repositoryPageForkCount + ' fork' +
+			(repositoryPageForkCount===1?'':'s') +
+			'</span>'
+		);
+		
 	}
 
 }
