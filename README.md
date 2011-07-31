@@ -21,7 +21,7 @@ underneath the "public" repo count on a user's main GitHub page.
 
     * OPERA: Follow instructions located on Opera's site: [User JS](http://www.opera.com/docs/userjs/). Continue to STEP 2.
 
-2. Install the "GitHub Repo-Filter Info" user script by clicking here: [github-fork-count.user.js](https://github.com/skratchdot/github-fork-count.user.js/raw/master/github-fork-count.user.js).  
+2. Install the "GitHub Fork Count" user script by clicking here: [github-fork-count.user.js](https://github.com/skratchdot/github-fork-count.user.js/raw/master/github-fork-count.user.js).  
 
 ### Screenshots ###
 
