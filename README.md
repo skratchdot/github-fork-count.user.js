@@ -25,11 +25,11 @@ underneath the "public" repo count on a user's main GitHub page.
 
 ### Screenshots ###
 
-Before installing the user script:  
+#### Before installing the user script: ####
   
 ![Screenshot 1](https://github.com/skratchdot/github-fork-count.user.js/raw/master/images/screen1.gif)
   
-After installing the user script:  
+#### After installing the user script: ####
   
 ![Screenshot 2](https://github.com/skratchdot/github-fork-count.user.js/raw/master/images/screen2.gif)
   
