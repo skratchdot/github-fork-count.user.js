@@ -10,7 +10,7 @@ var main = function () {
 		// Initial our variables (and jQuery selectors)
 		var forkCount = 0,
 			repoList = jQuery('ul.repo_list li'),
-			publicRepos = jQuery('div#main div.site div.columns div.last ul.stats li:first a:first');
+			publicRepos = jQuery('div.site div.columns div.last ul.stats li:first a:first');
 
 		// Loop through all repos, looking for public forks
 		repoList.each(function() {
