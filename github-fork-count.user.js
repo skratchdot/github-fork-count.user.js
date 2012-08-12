@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name           Github Fork Count
+// @name           Github: Fork Count
 // @namespace      https://github.com/skratchdot/github-fork-count.user.js
 // @description    A user script to display repo counts (public, private, sources, forks, mirrors) where the "public" repo counts used to be.
 // @include        https://github.com/*
@@ -8,7 +8,7 @@
 // @icon           http://skratchdot.com/favicon.ico
 // @downloadURL    https://github.com/skratchdot/github-fork-count.user.js/raw/master/github-fork-count.user.js
 // @updateURL      https://github.com/skratchdot/github-fork-count.user.js/raw/master/github-fork-count.user.js
-// @version        1.1
+// @version        1.2
 // ==/UserScript==
 /*global jQuery */
 /*jslint browser: true */
