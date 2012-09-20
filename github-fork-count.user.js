@@ -5,10 +5,11 @@
 // @include        https://github.com/*
 // @match          https://github.com/*
 // @run-at         document-end
+// @grant          none
 // @icon           http://skratchdot.com/favicon.ico
 // @downloadURL    https://github.com/skratchdot/github-fork-count.user.js/raw/master/github-fork-count.user.js
 // @updateURL      https://github.com/skratchdot/github-fork-count.user.js/raw/master/github-fork-count.user.js
-// @version        1.2
+// @version        1.3
 // ==/UserScript==
 /*global jQuery */
 /*jslint browser: true */
@@ -25,7 +26,7 @@ var userScript = function () {
 			countForks = 0,
 			countMirrors = 0,
 			repoList = jQuery('ul.repo_list > li'),
-			stats = jQuery('body.page-profile div.profilecols ul.stats');
+			stats = jQuery('body.page-profile-next div.profilecols ul.stats');
 
 		// Loop through all repos, looking for public forks
 		repoList.each(function () {
@@ -53,10 +54,9 @@ var userScript = function () {
 		// Display Fork Count (profile page - right column)
 		if (stats.length > 0) {
 			stats.append('<li>' +
-				'<strong>' + countRepos + '<span style="display:inline-block;font-weight:normal;">&nbsp;repos</span></strong>' +
 				'<span>' + countPublic + ' public, ' +
-				countPrivate + ' private</span>' +
-				'<span style="margin:0">' + countSources + ' sources, ' +
+				countPrivate + ' private, ' +
+				countSources + ' sources, ' +
 				countForks + ' forks</span>' +
 				(countMirrors > 0 ? '<span style="margin:0">' + countMirrors + ' mirrors</span>' : '') +
 				'</li>');
