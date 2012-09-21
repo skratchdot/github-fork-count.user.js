@@ -9,7 +9,7 @@
 // @icon           http://skratchdot.com/favicon.ico
 // @downloadURL    https://github.com/skratchdot/github-fork-count.user.js/raw/master/github-fork-count.user.js
 // @updateURL      https://github.com/skratchdot/github-fork-count.user.js/raw/master/github-fork-count.user.js
-// @version        1.3
+// @version        1.4
 // ==/UserScript==
 /*global jQuery */
 /*jslint browser: true */
@@ -17,7 +17,7 @@
 var userScript = function () {
 	'use strict';
 
-	jQuery(document).ready(function () {
+	var init = function () {
 		// Initial our variables (and jQuery selectors)
 		var countRepos = 0,
 			countPublic = 0,
@@ -26,7 +26,7 @@ var userScript = function () {
 			countForks = 0,
 			countMirrors = 0,
 			repoList = jQuery('ul.repo_list > li'),
-			stats = jQuery('body.page-profile-next div.profilecols ul.stats');
+			stats = jQuery('body.page-profile div.profilecols ul.stats');
 
 		// Loop through all repos, looking for public forks
 		repoList.each(function () {
@@ -61,6 +61,15 @@ var userScript = function () {
 				(countMirrors > 0 ? '<span style="margin:0">' + countMirrors + ' mirrors</span>' : '') +
 				'</li>');
 		}
+	};
+
+	jQuery(document).ready(function () {
+		jQuery(document).on('pjax:end', function (event) {
+			if (jQuery(event.relatedTarget).parents('li[data-tab="repo"]').length > 0) {
+				init();
+			}
+		});
+		init();
 	});
 };
 
