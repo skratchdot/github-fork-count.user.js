@@ -9,7 +9,7 @@
 // @icon           http://skratchdot.com/favicon.ico
 // @downloadURL    https://github.com/skratchdot/github-fork-count.user.js/raw/master/github-fork-count.user.js
 // @updateURL      https://github.com/skratchdot/github-fork-count.user.js/raw/master/github-fork-count.user.js
-// @version        1.4
+// @version        1.5
 // ==/UserScript==
 /*global jQuery */
 /*jslint browser: true */
@@ -25,7 +25,7 @@ var userScript = function () {
 			countSources = 0,
 			countForks = 0,
 			countMirrors = 0,
-			repoList = jQuery('ul.repo_list > li'),
+			repoList = jQuery('ul.js-repo-list > li'),
 			stats = jQuery('body.page-profile div.profilecols ul.stats');
 
 		// Loop through all repos, looking for public forks
