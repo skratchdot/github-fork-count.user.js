@@ -62,7 +62,7 @@ var userScript = function () {
 						(countMirrors > 0 ? '<span style="margin:0">' + countMirrors + ' mirrors</span>' : '') +
 						'</li>');
 			} else {
-				stats.append('<li><span>for repo counts: <a href="?tab=repositories">click here</a></span></li>');
+				stats.append('<li><span>repo counts visible on <a href="?tab=repositories">tab repositories</a></span></li>');
 			}
 		}
 	};
