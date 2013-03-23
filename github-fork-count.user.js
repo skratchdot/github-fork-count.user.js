@@ -9,7 +9,7 @@
 // @icon           http://skratchdot.com/favicon.ico
 // @downloadURL    https://github.com/skratchdot/github-fork-count.user.js/raw/master/github-fork-count.user.js
 // @updateURL      https://github.com/skratchdot/github-fork-count.user.js/raw/master/github-fork-count.user.js
-// @version        1.5
+// @version        1.6
 // ==/UserScript==
 /*global jQuery */
 /*jslint browser: true */
@@ -53,19 +53,23 @@ var userScript = function () {
 
 		// Display Fork Count (profile page - right column)
 		if (stats.length > 0) {
-			stats.append('<li>' +
-				'<span>' + countPublic + ' public, ' +
-				countPrivate + ' private, ' +
-				countSources + ' sources, ' +
-				countForks + ' forks</span>' +
-				(countMirrors > 0 ? '<span style="margin:0">' + countMirrors + ' mirrors</span>' : '') +
-				'</li>');
+			if (jQuery('li[data-tab="repo"] .tabnav-tab.selected').length > 0) {
+				stats.append('<li>' +
+						'<span>' + countPublic + ' public, ' +
+						countPrivate + ' private, ' +
+						countSources + ' sources, ' +
+						countForks + ' forks</span>' +
+						(countMirrors > 0 ? '<span style="margin:0">' + countMirrors + ' mirrors</span>' : '') +
+						'</li>');
+			} else {
+				stats.append('<li><span>for repo counts: <a href="?tab=repositories">click here</a></span></li>');
+			}
 		}
 	};
 
 	jQuery(document).ready(function () {
 		jQuery(document).on('pjax:end', function (event) {
-			if (jQuery(event.relatedTarget).parents('li[data-tab="repo"]').length > 0) {
+			if (jQuery('body.page-profile').length > 0) {
 				init();
 			}
 		});
