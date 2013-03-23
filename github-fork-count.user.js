@@ -9,7 +9,7 @@
 // @icon           http://skratchdot.com/favicon.ico
 // @downloadURL    https://github.com/skratchdot/github-fork-count.user.js/raw/master/github-fork-count.user.js
 // @updateURL      https://github.com/skratchdot/github-fork-count.user.js/raw/master/github-fork-count.user.js
-// @version        1.6
+// @version        1.7
 // ==/UserScript==
 /*global jQuery */
 /*jslint browser: true */
