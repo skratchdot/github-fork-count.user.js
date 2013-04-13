@@ -9,12 +9,12 @@
 // @icon           http://skratchdot.com/favicon.ico
 // @downloadURL    https://github.com/skratchdot/github-fork-count.user.js/raw/master/github-fork-count.user.js
 // @updateURL      https://github.com/skratchdot/github-fork-count.user.js/raw/master/github-fork-count.user.js
-// @version        1.7
+// @version        1.8
 // ==/UserScript==
 /*global jQuery */
 /*jslint browser: true */
 
-var userScript = function () {
+(function () {
 	'use strict';
 
 	var init = function () {
@@ -75,9 +75,4 @@ var userScript = function () {
 		});
 		init();
 	});
-};
-
-// Inject our script onto the page
-var script = document.createElement('script');
-script.textContent = '(' + userScript.toString() + ')();';
-document.body.appendChild(script);
+}());
